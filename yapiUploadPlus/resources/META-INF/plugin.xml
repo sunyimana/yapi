@@ -1,0 +1,59 @@
+<idea-plugin>
+<id>YapiUploadPlus</id>
+<name>YapiUploadPlus</name>
+<vendor email="543426555@qq.com" url="http://www.baidu.com">SYM</vendor>
+
+<!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+     on how to target different products -->
+<!-- uncomment to enable plugin in all products
+<depends>com.intellij.modules.lang</depends>
+-->
+
+<depends>com.intellij.modules.platform</depends>
+<depends>com.intellij.modules.lang</depends>
+<depends>com.intellij.modules.java</depends>
+
+<extensions defaultExtensionNs="com.intellij">
+  <!-- Add your extensions here -->
+</extensions>
+
+
+<!--  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable instance="com.sym.component.ConfigComponent"/>
+    <applicationService serviceImplementation="com.sym.component.ConfigPersistence"
+                        serviceInterface="com.sym.component.ConfigPersistence"/>
+  </extensions>-->
+
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.java</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <applicationService
+            serviceImplementation="com.sym.config.YApiApplicationPersistentState"/>
+    <projectConfigurable
+            instance="com.sym.config.YApiSearchableConfigurable"/>
+    <projectService
+            serviceImplementation="com.sym.config.YApiProjectPersistentState"/>
+    <defaultLiveTemplatesProvider
+            implementation="com.sym.template.YApiTemplateProvider"/>
+    <liveTemplateContext
+            implementation="com.sym.template.YApiTemplateContextType"/>
+  </extensions>
+
+  <project-components>
+    <component>
+      <implementation-class>com.sym.component.YApiInitComponent</implementation-class>
+    </component>
+  </project-components>
+
+<actions>
+  <!-- Add your actions here -->
+  <action id="UploadToYapi" class="com.sym.interaction.UploadToYapi" text="上传到Yapi"
+          description="上传到Yapi">
+    <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
+    <keyboard-shortcut keymap="$default" first-keystroke="alt u"/>
+  </action>
+</actions>
+
+</idea-plugin>
