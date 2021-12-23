@@ -13,7 +13,7 @@
 保持公司统一风格的代码注释；
 
 **下载地址**
-1:[https://github.com/sunyimana/yapi/blob/master/yapiUploadPlus/yapiUploadPlus.jar](下载地址) 2:idea 插件库
+1:[https://github.com/sunyimana/yapi/blob/master/yapiUploadPlus/yapiUploadPlus.jar] 2:idea 插件库
 
 **支持语言**
     java,spring
