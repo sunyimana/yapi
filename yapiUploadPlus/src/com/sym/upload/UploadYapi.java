@@ -22,7 +22,7 @@ import static com.sym.constant.YapiConstant.yapiSave;
 import static com.sym.constant.YapiConstant.yapiUp;
 
 /**
- * 上传到yapi
+ * 上传到yapi 主入口
  *
  * @author 543426555@qq.com
  * @date 2019/1/31 11:41 AM
