@@ -12,6 +12,8 @@
 
 保持公司统一风格的代码注释；
 
+本插件基于代码注释所以注释很重要，调用yapi接口实现接口上传，支持dubbo接口和http接口
+
 **下载地址**
 1:[https://github.com/sunyimana/yapi/blob/master/yapiUploadPlus/yapiUploadPlus.jar] 2:idea 插件库
 
@@ -22,7 +24,7 @@
    单个上传选中方法名称 批量上传选中类名
    
 **支持接口 **
-    目前 dubbo 接口/api
+    目前 dubbo /http
     
 **支持yapi 的版本**
    1.5.0+
@@ -31,4 +33,6 @@
     2017+
     
 **使用方式 **
-    查看 wiki
+    查看 https://github.com/sunyimana/yapi/wiki
+**联系方式 **
+    如果有更好的意见和建议，或者定制化需求开发请联系邮箱543426555@qq.com
