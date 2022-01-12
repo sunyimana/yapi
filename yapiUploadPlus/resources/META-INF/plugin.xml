@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>YapiUploadPlus</id>
   <name>YapiUploadPlus</name>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <vendor email="543426555@qq.com" url="https://github.com/sunyimana/yapi">YapiUploadPlus</vendor>
 
 <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -32,6 +32,10 @@
     ]]></description>
 
   <change-notes><![CDATA[
+      <h3>v1.0.2 update</h3>
+      <ul>
+          <li>update plugin help</li>
+      </ul>
       <h3>v1.0.1 update</h3>
       <ul>
           <li>support dubbo inter</li>
