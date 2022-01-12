@@ -18,10 +18,7 @@
        <li>Reduce the time cost of manual maintenance of YAPI interface documents</li>
        <li>quickly submit interface documents to YAPI through idea plug-in</li>
        <li>supporting HTTP/Dubbo interface</li>
-       <li>right click menu<em>private notes</em>view actions</li>
        <br/>
-       <p>synchronous operation</p>
-       <li>The synchronization operation data are cached in the current user directory In the privatenotes folder, if you need to synchronize, you can use the powerful GIT</li>
        <br/>
        <a href="https://github.com/sunyimana/yapi">YapiUploadPlus 源码和文档</a><br>
        你还在为手动编写yapi接口而烦恼吗？<br/>
@@ -32,7 +29,6 @@
        <li>支持http/dubbo接口</li>
        <br/>
        <br/>
-       <img src="https://gitee.com/Lovxy/private-notes/raw/master/doc/show.gif"/>
     ]]></description>
 
   <change-notes><![CDATA[
