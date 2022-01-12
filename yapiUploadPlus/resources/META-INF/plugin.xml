@@ -1,14 +1,51 @@
 <idea-plugin>
-<id>YapiUploadPlus</id>
-<name>YapiUploadPlus</name>
-<vendor email="543426555@qq.com" url="http://www.baidu.com">SYM</vendor>
-<version>1.0.0</version>
+  <id>YapiUploadPlus</id>
+  <name>YapiUploadPlus</name>
+  <version>1.0.1</version>
+  <vendor email="543426555@qq.com" url="https://github.com/sunyimana/yapi">YapiUploadPlus</vendor>
+
 <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
      on how to target different products -->
 <!-- uncomment to enable plugin in all products
 <depends>com.intellij.modules.lang</depends>
 -->
-<description>减少手动维护yapi接口文档的时间成本，通过idea插件快速提交接口文档到yapi</description>
+
+  <description><![CDATA[
+         <a href="https://github.com/sunyimana/yapi">YapiUploadPlus source code and document</a><br>
+        Are you still bothered to write the YAPI interface manually? <br/>
+        Writing the yAPI interface manually is time-consuming and error-prone<br/>
+       <li>Use this plugin to select a class or method and right-click upload to YAPI</li>
+       <li>Reduce the time cost of manual maintenance of YAPI interface documents</li>
+       <li>quickly submit interface documents to YAPI through idea plug-in</li>
+       <li>supporting HTTP/Dubbo interface</li>
+       <li>right click menu<em>private notes</em>view actions</li>
+       <br/>
+       <p>synchronous operation</p>
+       <li>The synchronization operation data are cached in the current user directory In the privatenotes folder, if you need to synchronize, you can use the powerful GIT</li>
+       <br/>
+       <a href="https://github.com/sunyimana/yapi">YapiUploadPlus 源码和文档</a><br>
+       你还在为手动编写yapi接口而烦恼吗？<br/>
+       手动编写yapi接口既浪费时间又容易出错<br/>
+       <li>使用本插件选中类或者方法右键选择上传到yapi即可</li>
+       <li>减少手动维护yapi接口文档的时间成本</li>
+       <li>通过idea插件快速提交接口文档到yapi</li>
+       <li>支持http/dubbo接口</li>
+       <br/>
+       <br/>
+       <img src="https://gitee.com/Lovxy/private-notes/raw/master/doc/show.gif"/>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <h3>v1.0.1 update</h3>
+      <ul>
+          <li>support dubbo inter</li>
+      </ul>
+      <h3>v1.0.0 first version</h3>
+      <ul>
+          <li>add yapi</li>
+      </ul>
+    ]]>
+  </change-notes>
 <idea-version since-build="94.539"/>
 
 <depends>com.intellij.modules.platform</depends>

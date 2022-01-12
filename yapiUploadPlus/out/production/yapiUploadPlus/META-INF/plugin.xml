@@ -2,12 +2,14 @@
 <id>YapiUploadPlus</id>
 <name>YapiUploadPlus</name>
 <vendor email="543426555@qq.com" url="http://www.baidu.com">SYM</vendor>
-
+<version>1.0.1</version>
 <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
      on how to target different products -->
 <!-- uncomment to enable plugin in all products
 <depends>com.intellij.modules.lang</depends>
 -->
+<description>support dubbo and http upload to yapi  Reduce the time cost of manual maintenance of YAPI interface documents, and quickly submit interface documents to YAPI through idea plug-in 中文: 减少手动维护yapi接口文档的时间成本，通过idea插件快速提交接口文档到yapi,支持http/dubbo接口</description>
+<idea-version since-build="94.539"/>
 
 <depends>com.intellij.modules.platform</depends>
 <depends>com.intellij.modules.lang</depends>
