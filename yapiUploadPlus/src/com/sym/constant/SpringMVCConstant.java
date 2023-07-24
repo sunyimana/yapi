@@ -11,6 +11,9 @@ public interface SpringMVCConstant {
     String RequestMapping="org.springframework.web.bind.annotation.RequestMapping";
 
 
+    String NsRequestMapping="com.weimob.saas.ns.common.annotations.NsRequestMapping";
+
+
     String GetMapping="org.springframework.web.bind.annotation.GetMapping";
 
     String PostMapping="org.springframework.web.bind.annotation.PostMapping";

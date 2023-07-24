@@ -64,7 +64,10 @@ public class YApiSearchableConfigurable implements SearchableConfigurable {
                 yApiConfigurationForm.getNamingStrategyComboBox().getSelectedIndex(),
                 yApiConfigurationForm.getDataModeComboBox().getSelectedIndex(),
                 yApiConfigurationForm.getStatusComboBox().getSelectedIndex(),
-                yApiConfigurationForm.getTagField().getText());
+                yApiConfigurationForm.getTagField().getText(),
+                yApiConfigurationForm.getHeaderNameField().getText(),
+                yApiConfigurationForm.getHeaderValueField().getText()
+                );
         return !this.yApiProjectProperty
                 .equals(ProjectConfigReader.read(this.project));
     }
@@ -101,6 +104,15 @@ public class YApiSearchableConfigurable implements SearchableConfigurable {
         if(Strings.isNotBlank(tag)){
             yApiConfigurationForm.getTagField().setText(tag);
         }
+        String headerName = property.getHeaderName();
+        if(Strings.isNotBlank(tag)){
+            yApiConfigurationForm.getHeaderNameField().setText(headerName);
+        }
+        String headerValue = property.getHeaderValue();
+        if(Strings.isNotBlank(tag)){
+            yApiConfigurationForm.getHeaderValueField().setText(headerValue);
+        }
+
 
     }
 

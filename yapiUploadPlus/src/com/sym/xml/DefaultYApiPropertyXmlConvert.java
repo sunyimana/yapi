@@ -10,6 +10,9 @@ public class DefaultYApiPropertyXmlConvert implements YApiPropertyXmlConvert<YAp
     private static final String KEY_PROJECT_ID = "project-id";
     private static final String KEY_TOKEN = "token";
     private static final String KEY_TAG = "tag";
+    private static final String KEY_HEADER_NAME = "header-name";
+
+    private static final String KEY_HEADER_VALUE = "header-value";
     private static final String KEY_DATA_MODE = "data-mode";
     private static final String KEY_STATUS_MODE = "status-mode";
     private static final String KEY_STRATEGY = "property-naming-strategy";
@@ -24,6 +27,8 @@ public class DefaultYApiPropertyXmlConvert implements YApiPropertyXmlConvert<YAp
         int dataMode = property.getDataMode();
         int statusMode = property.getStatusMode();
         String tag = property.getTag();
+        String headerName = property.getHeaderName();
+        String headerValue = property.getHeaderValue();
         boolean enableBasicScope = property.isEnableBasicScope();
         Element element = new Element("symYApiUpload");
         if (Strings.isNotBlank(url)) {
@@ -35,6 +40,12 @@ public class DefaultYApiPropertyXmlConvert implements YApiPropertyXmlConvert<YAp
         }
         if (Strings.isNotBlank(tag)) {
             element.setAttribute(KEY_TAG, tag);
+        }
+        if (Strings.isNotBlank(headerName)) {
+            element.setAttribute(KEY_HEADER_NAME, headerName);
+        }
+        if (Strings.isNotBlank(headerValue)) {
+            element.setAttribute(KEY_HEADER_VALUE, headerValue);
         }
         element.setAttribute(KEY_STATUS_MODE, Integer.toString(statusMode));
         element.setAttribute(KEY_DATA_MODE, Integer.toString(dataMode));
@@ -63,6 +74,16 @@ public class DefaultYApiPropertyXmlConvert implements YApiPropertyXmlConvert<YAp
         String tag = element.getAttributeValue(KEY_TAG);
         if (Strings.isNotBlank(tag)) {
             property.setTag(tag);
+        }
+
+        String headerName = element.getAttributeValue(KEY_HEADER_NAME);
+        if (Strings.isNotBlank(headerName)) {
+            property.setHeaderName(headerName);
+        }
+
+        String headerValue = element.getAttributeValue(KEY_HEADER_VALUE);
+        if (Strings.isNotBlank(headerValue)) {
+            property.setHeaderValue(headerValue);
         }
         String s = element.getAttributeValue(KEY_STRATEGY);
         int strategy = 0;

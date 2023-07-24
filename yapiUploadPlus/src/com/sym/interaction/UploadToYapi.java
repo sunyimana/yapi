@@ -25,6 +25,8 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * @description: 入口
@@ -42,17 +44,16 @@ public class UploadToYapi extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-     //   Editor editor = (Editor) e.getDataContext().getData(CommonDataKeys.EDITOR);
 
         Project project = e.getData(CommonDataKeys.PROJECT);
 
         YApiProjectProperty property = ProjectConfigReader.read(project);
-
-     //   Project project = editor.getProject();
         String projectToken = property.getToken();;
         String projectId = property.getProjectId()+"";
         String yapiUrl = property.getUrl();
         String tag = property.getTag();
+        String headerName = property.getHeaderName();
+        String headerValue = property.getHeaderValue();
         String projectType = ProjectTypeConstant.api;
         int statusMode = property.getStatusMode();
 
@@ -130,6 +131,18 @@ public class UploadToYapi extends AnAction {
                     }
                     if(null!=tagList){
                         yapiSaveParam.setTag(tagList);
+                    }
+                    if(StringUtils.isNotBlank(headerName)&&StringUtils.isNotBlank(headerValue)){
+                        YapiHeaderDTO yapiHeaderDTO=new YapiHeaderDTO();
+                            yapiHeaderDTO.setName(headerName);
+                            yapiHeaderDTO.setValue(headerValue);
+                        if(Objects.isNull(yapiSaveParam.getReq_headers())){
+                            List list=new ArrayList();
+                            list.add(yapiHeaderDTO);
+                            yapiSaveParam.setReq_headers(list);
+                        }else{
+                            yapiSaveParam.getReq_headers().add(yapiHeaderDTO);
+                        }
                     }
                     try {
                         // 上传

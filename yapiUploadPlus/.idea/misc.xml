@@ -3,4 +3,5 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="IntelliJ IDEA Community Edition IC-191.8026.42" project-jdk-type="IDEA JDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="ProjectYApiUploadPlus" url="http://127.0.0.1:3000" project-id="1" status-mode="0" data-mode="0" property-naming-strategy="0" enable-basic-scope="false" />
 </project>

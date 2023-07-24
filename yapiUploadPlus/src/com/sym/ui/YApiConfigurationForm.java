@@ -21,6 +21,8 @@ public class YApiConfigurationForm {
     private ComboBox<String> dataModeComboBox;
     private JTextField tagField;
     private ComboBox<String> statusComboBox;
+    private JTextField headerNameField;
+    private JTextField headerValueField;
 
     public JTextField getTagField() {
         return tagField;
@@ -36,6 +38,22 @@ public class YApiConfigurationForm {
 
     public void setTagField(JTextField tagField) {
         this.tagField = tagField;
+    }
+
+    public JTextField getHeaderNameField() {
+        return headerNameField;
+    }
+
+    public void setHeaderNameField(JTextField headerNameField) {
+        this.headerNameField = headerNameField;
+    }
+
+    public JTextField getHeaderValueField() {
+        return headerValueField;
+    }
+
+    public void setHeaderValueField(JTextField headerValueField) {
+        this.headerValueField = headerValueField;
     }
 
     public JPanel getPanel() {

@@ -150,6 +150,11 @@ public class BuildJsonForYapi {
         }
         // 获取类上面的RequestMapping 中的value
         PsiAnnotation psiAnnotation = PsiAnnotationSearchUtil.findAnnotation(selectedClass, SpringMVCConstant.RequestMapping);
+
+        if(null==psiAnnotation){
+            psiAnnotation = PsiAnnotationSearchUtil.findAnnotation(selectedClass, SpringMVCConstant.NsRequestMapping);
+        }
+
         if (psiAnnotation != null) {
             PsiNameValuePair[] psiNameValuePairs = psiAnnotation.getParameterList().getAttributes();
             if (psiNameValuePairs.length > 0) {
@@ -174,6 +179,10 @@ public class BuildJsonForYapi {
         yapiApiDTO.setPath(path.toString());
 
         PsiAnnotation psiAnnotationMethod = PsiAnnotationSearchUtil.findAnnotation(psiMethodTarget, SpringMVCConstant.RequestMapping);
+
+        if(null==psiAnnotationMethod){
+             psiAnnotationMethod = PsiAnnotationSearchUtil.findAnnotation(psiMethodTarget, SpringMVCConstant.NsRequestMapping);
+        }
 
         if (psiAnnotationMethod != null) {
             PsiNameValuePair[] psiNameValuePairs = psiAnnotationMethod.getParameterList().getAttributes();

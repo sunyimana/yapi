@@ -20,6 +20,9 @@ public class YApiProjectProperty {
     private int statusMode = DEFAULT_STATUS_MODE;
 
     private String tag = "";
+
+    private String headerName="";
+    private String headerValue="";
     private boolean enableBasicScope;
 
     public YApiProjectProperty() {
@@ -27,7 +30,7 @@ public class YApiProjectProperty {
     }
 
     public YApiProjectProperty(String url, int projectId, String token, int strategy,
-                               int dataMode,int statusMode, String tag) {
+                               int dataMode,int statusMode, String tag,String headerName,String headerValue) {
         this.projectId = projectId;
         this.token = token;
         this.strategy = strategy;
@@ -35,6 +38,8 @@ public class YApiProjectProperty {
         this.statusMode = statusMode;
         this.setUrl(url);
         this.tag = tag;
+        this.headerName = headerName;
+        this.headerValue = headerValue;
     }
 
     public String getUrl() {
@@ -89,6 +94,22 @@ public class YApiProjectProperty {
         return statusMode;
     }
 
+    public String getHeaderName() {
+        return headerName;
+    }
+
+    public void setHeaderName(String headerName) {
+        this.headerName = headerName;
+    }
+
+    public String getHeaderValue() {
+        return headerValue;
+    }
+
+    public void setHeaderValue(String headerValue) {
+        this.headerValue = headerValue;
+    }
+
     public void setStatusMode(int statusMode) {
         this.statusMode = statusMode;
     }
@@ -108,7 +129,7 @@ public class YApiProjectProperty {
     @Override
     public int hashCode() {
         return Objects
-                .hash(this.url, this.projectId, this.token, this.strategy, this.enableBasicScope,this.tag);
+                .hash(this.url, this.projectId, this.token, this.strategy, this.enableBasicScope,this.tag,this.headerName,this.headerValue);
     }
 
     @Override
@@ -127,6 +148,8 @@ public class YApiProjectProperty {
                 Objects.equals(dataMode, that.dataMode) &&
                 Objects.equals(statusMode, that.statusMode) &&
                 Objects.equals(tag, that.tag) &&
+                Objects.equals(headerName,that.headerName)&&
+                Objects.equals(headerValue,that.headerValue)&&
                 Objects.equals(enableBasicScope, that.enableBasicScope);
     }
 }
