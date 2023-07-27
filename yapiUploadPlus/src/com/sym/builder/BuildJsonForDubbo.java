@@ -330,4 +330,67 @@ public class BuildJsonForDubbo{
         }
         return kv;
     }
+
+    /**
+     * 根据className快速构建YapiDubboDTO列表数据
+     *
+     * @param className
+     * @param psiFile
+     * @param project
+     * @return
+     */
+    public ArrayList<YapiDubboDTO> actionPerformedList(String className, PsiFile psiFile, Project project) {
+        String selectedText = className;
+        PsiJavaFile psiJavaFile = (PsiJavaFile) PsiManager.getInstance(project).findFile(psiFile.getVirtualFile());
+        if (psiJavaFile == null) {
+            return null;
+        }
+        PsiClass[] classes = psiJavaFile.getClasses();
+        if (classes.length == 0) {
+            return null;
+        }
+        PsiClass selectedClass = classes[0];
+        String classMenu = null;
+        if (Objects.nonNull(selectedClass.getDocComment())) {
+            classMenu = DesUtil.getMenu(selectedClass.getText());
+        }
+        ArrayList<YapiDubboDTO> yapiDubboDTOS = new ArrayList<>();
+        if (selectedText.equals(selectedClass.getName())) {
+            PsiMethod[] psiMethods = selectedClass.getMethods();
+            for (PsiMethod psiMethodTarget : psiMethods) {
+                //去除私有方法
+                if (!psiMethodTarget.getModifierList().hasModifierProperty("private")) {
+                    YapiDubboDTO yapiDubboDTO = actionPerformed(selectedClass, psiMethodTarget, project, psiFile);
+                    if (Objects.nonNull(psiMethodTarget.getDocComment())) {
+                        yapiDubboDTO.setMenu(DesUtil.getMenu(psiMethodTarget.getDocComment().getText()));
+                        yapiDubboDTO.setStatus(DesUtil.getStatus(psiMethodTarget.getDocComment().getText()));
+                    }
+                    if (Objects.isNull(yapiDubboDTO.getMenu())) {
+                        yapiDubboDTO.setMenu(classMenu);
+                    }
+                    yapiDubboDTOS.add(yapiDubboDTO);
+                }
+            }
+        } else {
+            PsiMethod[] psiMethods = selectedClass.getAllMethods();
+            //寻找目标Method
+            PsiMethod psiMethodTarget = null;
+            for (PsiMethod psiMethod : psiMethods) {
+                if (psiMethod.getName().equals(selectedText)) {
+                    psiMethodTarget = psiMethod;
+                    break;
+                }
+            }
+            YapiDubboDTO yapiDubboDTO = actionPerformed(selectedClass, psiMethodTarget, project, psiFile);
+            if (Objects.nonNull(psiMethodTarget.getDocComment())) {
+                yapiDubboDTO.setMenu(DesUtil.getMenu(psiMethodTarget.getDocComment().getText()));
+                yapiDubboDTO.setStatus(DesUtil.getStatus(psiMethodTarget.getDocComment().getText()));
+            }
+            if (Objects.isNull(yapiDubboDTO.getMenu())) {
+                yapiDubboDTO.setMenu(classMenu);
+            }
+            yapiDubboDTOS.add(yapiDubboDTO);
+        }
+        return yapiDubboDTOS;
+    }
 }
