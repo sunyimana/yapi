@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="059f2eb6-e2a1-42cf-99b2-4d7c6477bc1c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/yapiUploadPlus/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yapiUploadPlus/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/builder/BuildJsonForDubbo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/builder/BuildJsonForDubbo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/builder/BuildJsonForYapi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/builder/BuildJsonForYapi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/config/YApiSearchableConfigurable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/config/YApiSearchableConfigurable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/constant/SpringMVCConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/constant/SpringMVCConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/interaction/UploadToYapi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/interaction/UploadToYapi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/ui/YApiConfigurationForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/ui/YApiConfigurationForm$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/ui/YApiConfigurationForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/ui/YApiConfigurationForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/xml/DefaultYApiPropertyXmlConvert.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/xml/DefaultYApiPropertyXmlConvert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/xml/YApiProjectProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/yapiUploadPlus/com/sym/xml/YApiProjectProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sym/config/YApiSearchableConfigurable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sym/config/YApiSearchableConfigurable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sym/constant/SpringMVCConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sym/constant/SpringMVCConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sym/interaction/UploadToYapi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sym/interaction/UploadToYapi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sym/ui/YApiConfigurationForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sym/ui/YApiConfigurationForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sym/ui/YApiConfigurationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sym/ui/YApiConfigurationForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sym/xml/DefaultYApiPropertyXmlConvert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sym/xml/DefaultYApiPropertyXmlConvert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sym/xml/YApiProjectProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sym/xml/YApiProjectProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sym/interaction/BatchUploadToYapi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sym/interaction/BatchUploadToYapi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yapiUploadPlus.jar" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,49 +22,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sym/interaction/UploadToYapi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="148" selection-start-line="148" selection-end-line="148" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="376" selection-start-line="376" selection-end-line="376" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sym/util/DesUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="312" selection-start-line="312" selection-end-line="312" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sym/config/YApiSearchableConfigurable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="112" column="40" selection-start-line="112" selection-start-column="40" selection-end-line="112" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1032#1033#0" expanded="true" />
-                <element signature="e#1071#1072#0" expanded="true" />
-                <element signature="e#2675#2676#0" expanded="true" />
-                <element signature="e#2707#2708#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sym/xml/DefaultYApiApplicationPropertyXmlConvert.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -90,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sym/xml/DefaultYApiPropertyXmlConvert.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            <state relative-caret-position="270">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -99,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sym/xml/YApiProjectProperty.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1077">
-              <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+            <state relative-caret-position="285">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
               <folding>
                 <element signature="e#1798#1799#0" expanded="true" />
                 <element signature="e#1826#1827#0" expanded="true" />
@@ -117,11 +60,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sym/upload/UploadYapi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="84" column="17" lean-forward="true" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+            <state relative-caret-position="735">
+              <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sym/interaction/UploadToYapi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="1067" column="26" selection-start-line="1067" selection-start-column="26" selection-end-line="1067" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/sym/interaction/BatchUploadToYapi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1776">
+              <caret line="193" column="13" lean-forward="true" selection-start-line="193" selection-start-column="13" selection-end-line="193" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,7 +105,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sym/util/HttpClientUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
+            <state relative-caret-position="3420">
               <caret line="272" column="26" selection-start-line="272" selection-start-column="26" selection-end-line="272" selection-end-column="26" />
               <folding>
                 <element signature="e#5870#5871#0" expanded="true" />
@@ -145,7 +118,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/com/intellij/openapi/actionSystem/impl/ActionMenuItem.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="3450">
               <caret line="291" selection-start-line="291" selection-end-line="291" />
             </state>
           </provider>
@@ -258,6 +231,7 @@
         <option value="$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java" />
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/com/sym/interaction/UploadToYapi.java" />
+        <option value="$PROJECT_DIR$/src/com/sym/interaction/BatchUploadToYapi.java" />
       </list>
     </option>
   </component>
@@ -286,8 +260,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -298,19 +272,18 @@
             <path>
               <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
               <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
               <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="live-templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
@@ -322,35 +295,6 @@
               <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sym" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sym" type="462c0819:PsiDirectoryNode" />
-              <item name="builder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sym" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sym" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sym" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
@@ -358,41 +302,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sym" type="462c0819:PsiDirectoryNode" />
               <item name="interaction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sym" type="462c0819:PsiDirectoryNode" />
-              <item name="processor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sym" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sym" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sym" type="462c0819:PsiDirectoryNode" />
-              <item name="upload" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yapiUploadPlus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sym" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yapiUploadPlus" type="b2602c69:ProjectViewProjectNode" />
@@ -413,6 +322,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="380" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/yapi/yapiUploadPlus" />
     <property name="settings.editor.selected.configurable" value="YApiUploadPlus" />
@@ -510,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641972354270</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改插件信息">
+      <created>1690181971517</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690181971517</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -524,8 +441,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28954422" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3378016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -539,10 +457,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295129" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3452722" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.18194842" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067025" side_tool="true" weight="0.7277937" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3295129" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.042918455" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.33094555" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.042979944" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -578,6 +496,20 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ce" />
@@ -607,13 +539,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>661</line>
+          <line>647</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>893</line>
+          <line>878</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
@@ -625,19 +557,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>77</line>
+          <line>63</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>137</line>
+          <line>123</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>376</line>
+          <line>362</line>
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
@@ -667,43 +599,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>527</line>
+          <line>513</line>
           <properties />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>565</line>
+          <line>551</line>
           <properties />
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>157</line>
+          <line>143</line>
           <properties />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>96</line>
+          <line>82</line>
           <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>139</line>
+          <line>125</line>
           <properties />
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>898</line>
+          <line>883</line>
           <properties />
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java</url>
-          <line>153</line>
+          <line>139</line>
           <properties />
           <option name="timeStamp" value="71" />
         </line-breakpoint>
@@ -818,27 +750,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/sym/component/ItemComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2460">
-          <caret line="172" column="13" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sym/util/FileToZipUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-api.jar!/com/intellij/notification/NotificationGroup.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-api.jar!/com/intellij/openapi/project/ProjectUtil.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -871,13 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16095">
-          <caret line="1073" column="16" selection-start-line="1073" selection-start-column="16" selection-end-line="1073" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1126,41 +1030,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sym/ui/YApiConfigurationForm.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
-          <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1332#1333#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1456#1457#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="4875">
+          <caret line="376" selection-start-line="376" selection-end-line="376" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sym/ui/YApiConfigurationForm.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/com/intellij/openapi/actionSystem/impl/ActionMenuItem.class">
+    <entry file="file://$PROJECT_DIR$/src/com/sym/util/DesUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="291" selection-start-line="291" selection-end-line="291" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sym/xml/DefaultYApiApplicationPropertyXmlConvert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="4425">
+          <caret line="312" selection-start-line="312" selection-end-line="312" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sym/config/YApiSearchableConfigurable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="1410">
           <caret line="112" column="40" selection-start-line="112" selection-start-column="40" selection-end-line="112" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1172,9 +1058,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sunyiman.pub" />
+    <entry file="file://$PROJECT_DIR$/sunyiman" />
+    <entry file="file://$PROJECT_DIR$/src/com/sym/ui/YApiConfigurationForm.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sym/ui/YApiConfigurationForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="89" column="44" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+          <folding>
+            <element signature="e#1293#1294#0" expanded="true" />
+            <element signature="e#1332#1333#0" expanded="true" />
+            <element signature="e#1400#1401#0" expanded="true" />
+            <element signature="e#1456#1457#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1516#1517#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sym/upload/UploadYapi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sym/interaction/UploadToYapi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sym/util/HttpClientUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
+        <state relative-caret-position="3420">
           <caret line="272" column="26" selection-start-line="272" selection-start-column="26" selection-end-line="272" selection-end-column="26" />
           <folding>
             <element signature="e#5870#5871#0" expanded="true" />
@@ -1183,10 +1106,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/com/intellij/openapi/actionSystem/impl/ActionMenuItem.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3450">
+          <caret line="291" selection-start-line="291" selection-end-line="291" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="1067" column="26" selection-start-line="1067" selection-start-column="26" selection-end-line="1067" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sym/xml/DefaultYApiApplicationPropertyXmlConvert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sym/xml/YApiProjectProperty.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1077">
-          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="285">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
           <folding>
             <element signature="e#1798#1799#0" expanded="true" />
             <element signature="e#1826#1827#0" expanded="true" />
@@ -1204,36 +1148,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sym/xml/DefaultYApiPropertyXmlConvert.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        <state relative-caret-position="270">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sym/util/DesUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sym/interaction/BatchUploadToYapi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="312" selection-start-line="312" selection-end-line="312" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sym/builder/BuildJsonForYapi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="376" selection-start-line="376" selection-end-line="376" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sym/interaction/UploadToYapi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="148" selection-start-line="148" selection-end-line="148" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sym/upload/UploadYapi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="84" column="17" lean-forward="true" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+        <state relative-caret-position="1776">
+          <caret line="193" column="13" lean-forward="true" selection-start-line="193" selection-start-column="13" selection-end-line="193" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

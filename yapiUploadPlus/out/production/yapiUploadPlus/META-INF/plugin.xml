@@ -1,16 +1,16 @@
 <idea-plugin>
-  <id>YapiUploadPlus</id>
-  <name>YapiUploadPlus</name>
-  <version>1.0.2</version>
-  <vendor email="543426555@qq.com" url="https://github.com/sunyimana/yapi">YapiUploadPlus</vendor>
+    <id>YapiUploadPlus</id>
+    <name>YapiUploadPlus</name>
+    <version>1.0.2</version>
+    <vendor email="543426555@qq.com" url="https://github.com/sunyimana/yapi">YapiUploadPlus</vendor>
 
-<!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-     on how to target different products -->
-<!-- uncomment to enable plugin in all products
-<depends>com.intellij.modules.lang</depends>
--->
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
 
-  <description><![CDATA[
+    <description><![CDATA[
          <a href="https://github.com/sunyimana/yapi">YapiUploadPlus source code and document</a><br>
         Are you still bothered to write the YAPI interface manually? <br/>
         Writing the yAPI interface manually is time-consuming and error-prone<br/>
@@ -31,7 +31,7 @@
        <br/>
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
       <h3>v1.0.2 update</h3>
       <ul>
           <li>update plugin help</li>
@@ -45,54 +45,62 @@
           <li>add yapi</li>
       </ul>
     ]]>
-  </change-notes>
-<idea-version since-build="94.539"/>
+    </change-notes>
+    <idea-version since-build="94.539"/>
 
-<depends>com.intellij.modules.platform</depends>
-<depends>com.intellij.modules.lang</depends>
-<depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
 
-<extensions defaultExtensionNs="com.intellij">
-  <!-- Add your extensions here -->
-</extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
 
 
-<!--  <extensions defaultExtensionNs="com.intellij">
-    <applicationConfigurable instance="com.sym.component.ConfigComponent"/>
-    <applicationService serviceImplementation="com.sym.component.ConfigPersistence"
-                        serviceInterface="com.sym.component.ConfigPersistence"/>
-  </extensions>-->
+    <!--  <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable instance="com.sym.component.ConfigComponent"/>
+        <applicationService serviceImplementation="com.sym.component.ConfigPersistence"
+                            serviceInterface="com.sym.component.ConfigPersistence"/>
+      </extensions>-->
 
-  <depends>com.intellij.modules.platform</depends>
-  <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
-    <applicationService
-            serviceImplementation="com.sym.config.YApiApplicationPersistentState"/>
-    <projectConfigurable
-            instance="com.sym.config.YApiSearchableConfigurable"/>
-    <projectService
-            serviceImplementation="com.sym.config.YApiProjectPersistentState"/>
-    <defaultLiveTemplatesProvider
-            implementation="com.sym.template.YApiTemplateProvider"/>
-    <liveTemplateContext
-            implementation="com.sym.template.YApiTemplateContextType"/>
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <applicationService
+                serviceImplementation="com.sym.config.YApiApplicationPersistentState"/>
+        <projectConfigurable
+                instance="com.sym.config.YApiSearchableConfigurable"/>
+        <projectService
+                serviceImplementation="com.sym.config.YApiProjectPersistentState"/>
+        <defaultLiveTemplatesProvider
+                implementation="com.sym.template.YApiTemplateProvider"/>
+        <liveTemplateContext
+                implementation="com.sym.template.YApiTemplateContextType"/>
+    </extensions>
 
-  <project-components>
-    <component>
-      <implementation-class>com.sym.component.YApiInitComponent</implementation-class>
-    </component>
-  </project-components>
+    <project-components>
+        <component>
+            <implementation-class>com.sym.component.YApiInitComponent</implementation-class>
+        </component>
+    </project-components>
 
-<actions>
-  <!-- Add your actions here -->
-  <action id="UploadToYapi" class="com.sym.interaction.UploadToYapi" text="上传到Yapi"
-          description="上传到Yapi">
-    <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
-    <keyboard-shortcut keymap="$default" first-keystroke="alt u"/>
-  </action>
-</actions>
+    <actions>
+        <!-- Add your actions here -->
+        <action id="UploadToYapi" class="com.sym.interaction.UploadToYapi" text="上传到Yapi"
+                description="上传到Yapi">
+            <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt u"/>
+        </action>
+
+        <group id="YapiUploadPlus" text="YapiUploadPlus" popup="true">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="ReplaceInPath"/>
+        </group>
+        <action id="BatchUploadToYapi" class="com.sym.interaction.BatchUploadToYapi" text="UploadToYapi"
+                description="BatchUploadToYapi">
+            <add-to-group group-id="YapiUploadPlus"/>
+        </action>
+    </actions>
 
 </idea-plugin>
