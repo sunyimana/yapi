@@ -88,18 +88,15 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action id="UploadToYapi" class="com.sym.interaction.UploadToYapi" text="上传到Yapi"
-                description="上传到Yapi">
+        <action id="UploadToYapi" class="com.sym.interaction.UploadToYapi" text="UploadToYapi"
+                description="上传接口数据到Yapi">
             <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="alt u"/>
         </action>
 
-        <group id="YapiUploadPlus" text="YapiUploadPlus" popup="true">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="ReplaceInPath"/>
-        </group>
         <action id="BatchUploadToYapi" class="com.sym.interaction.BatchUploadToYapi" text="UploadToYapi"
-                description="BatchUploadToYapi">
-            <add-to-group group-id="YapiUploadPlus"/>
+                description="批量上传接口数据到Yapi">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
         </action>
     </actions>
 
