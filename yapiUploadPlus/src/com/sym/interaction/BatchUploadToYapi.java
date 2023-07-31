@@ -16,10 +16,13 @@ import com.intellij.psi.PsiManager;
 import com.sym.builder.BuildJsonForDubbo;
 import com.sym.builder.BuildJsonForYapi;
 import com.sym.component.ConfigPersistence;
+import com.sym.config.impl.ProjectConfigReader;
 import com.sym.constant.ProjectTypeConstant;
+import com.sym.constant.StatusEnum;
 import com.sym.constant.YapiConstant;
 import com.sym.dto.*;
 import com.sym.upload.UploadYapi;
+import com.sym.xml.YApiProjectProperty;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -59,36 +62,35 @@ public class BatchUploadToYapi extends AnAction {
         String projectToken = null;
         String projectId = null;
         String yapiUrl = null;
+        String tag = null;
+        String headerName = null;
+        String headerValue = null;
         String projectType = null;
+        int statusMode = 0;
+        String status = null;
         String returnClass = null;
         String attachUpload = null;
         // 获取配置
         try {
-            final java.util.List<ConfigDTO> configs = ServiceManager.getService(ConfigPersistence.class).getConfigs();
-            if (configs == null || configs.size() == 0) {
-                Messages.showErrorDialog("请先去配置界面配置yapi配置", "获取配置失败！");
-                return;
+            YApiProjectProperty property = ProjectConfigReader.read(project);
+            projectToken = property.getToken();
+            projectId = property.getProjectId() + "";
+            yapiUrl = property.getUrl();
+            tag = property.getTag();
+            headerName = property.getHeaderName();
+            headerValue = property.getHeaderValue();
+            projectType = ProjectTypeConstant.api;
+            statusMode = property.getStatusMode();
+
+            status = StatusEnum.enumByType(statusMode).name();
+            if (0 == property.getDataMode()) {
+                projectType = ProjectTypeConstant.dubbo;
+
             }
-            // PsiFile psiFile = e.getDataContext().getData(CommonDataKeys.PSI_FILE);
-            // String virtualFile = psiFile.getVirtualFile().getPath();
-            VirtualFile finalVirtualFile = virtualFile;
-            final List<ConfigDTO> collect = configs.stream()
-                    .filter(it -> {
-                        if (!it.getProjectName().equals(project.getName())) {
-                            return false;
-                        }
-                        final String str = (File.separator + it.getProjectName() + File.separator) + (it.getModuleName().equals(it.getProjectName()) ? "" : (it.getModuleName() + File.separator));
-                        return finalVirtualFile.getPath().contains(str);
-                    }).collect(Collectors.toList());
-            if (collect.isEmpty()) {
-                Messages.showErrorDialog("没有找到对应的yapi配置，请在菜单 > Preferences > Other setting > YapiUpload 添加", "Error");
-                return;
+            java.util.List<String> tagList = new ArrayList<>();
+            if (null != tag) {
+                tagList = Arrays.asList(tag.split(","));
             }
-            final ConfigDTO configDTO = collect.get(0);
-            projectToken = configDTO.getProjectToken();
-            projectId = configDTO.getProjectId();
-            yapiUrl = configDTO.getYapiUrl();
-            projectType = configDTO.getProjectType();
         } catch (Exception ex) {
             Messages.showErrorDialog("获取配置失败，异常:  " + ex.getMessage(), "获取配置失败！");
             return;
@@ -134,12 +136,25 @@ public class BatchUploadToYapi extends AnAction {
                 if (yapiDubboDTOs != null) {
                     for (YapiDubboDTO yapiDubboDTO : yapiDubboDTOs) {
                         YapiSaveParam yapiSaveParam = new YapiSaveParam(projectToken, yapiDubboDTO.getTitle(), yapiDubboDTO.getPath(), yapiDubboDTO.getParams(), yapiDubboDTO.getResponse(), Integer.valueOf(projectId), yapiUrl, yapiDubboDTO.getDesc());
-                        yapiSaveParam.setStatus(yapiDubboDTO.getStatus());
+
+                        if (StringUtils.isBlank(yapiDubboDTO.getStatus())) {
+                            yapiSaveParam.setStatus(status);
+                        } else {
+                            yapiSaveParam.setStatus(yapiDubboDTO.getStatus());
+                        }
                         if (!Strings.isNullOrEmpty(yapiDubboDTO.getMenu())) {
                             yapiSaveParam.setMenu(yapiDubboDTO.getMenu());
                         } else {
                             yapiSaveParam.setMenu(YapiConstant.menu);
                         }
+                        yapiSaveParam.setMethod(ProjectTypeConstant.dubbo);
+                        yapiSaveParam.setDubbo_service(yapiDubboDTO.getDubbo_service());
+                        yapiSaveParam.setDubbo_method(yapiDubboDTO.getDubbo_method());
+                        yapiSaveParam.setReq_body_is_json_schema(true);
+                        if (null != tagList) {
+                            yapiSaveParam.setTag(tagList);
+                        }
+
                         try {
                             // 上传
                             YapiResponse yapiResponse = new UploadYapi().uploadSave(yapiSaveParam, null, project.getBasePath());
@@ -167,15 +182,36 @@ public class BatchUploadToYapi extends AnAction {
                         YapiSaveParam yapiSaveParam = new YapiSaveParam(projectToken, yapiApiDTO.getTitle(), yapiApiDTO.getPath(),
                                 yapiApiDTO.getParams(), yapiApiDTO.getRequestBody(), yapiApiDTO.getResponse(), Integer.valueOf(projectId),
                                 yapiUrl, true, yapiApiDTO.getMethod(), yapiApiDTO.getDesc(), yapiApiDTO.getHeader());
+
                         yapiSaveParam.setReq_body_form(yapiApiDTO.getReq_body_form());
                         yapiSaveParam.setReq_body_type(yapiApiDTO.getReq_body_type());
                         yapiSaveParam.setReq_params(yapiApiDTO.getReq_params());
-                        yapiSaveParam.setStatus(yapiApiDTO.getStatus());
+                        if (StringUtils.isBlank(yapiApiDTO.getStatus())) {
+                            yapiSaveParam.setStatus(status);
+                        } else {
+                            yapiSaveParam.setStatus(yapiApiDTO.getStatus());
+                        }
                         if (!Strings.isNullOrEmpty(yapiApiDTO.getMenu())) {
                             yapiSaveParam.setMenu(yapiApiDTO.getMenu());
                         } else {
                             yapiSaveParam.setMenu(YapiConstant.menu);
                         }
+                        if (null != tagList) {
+                            yapiSaveParam.setTag(tagList);
+                        }
+                        if (StringUtils.isNotBlank(headerName) && StringUtils.isNotBlank(headerValue)) {
+                            YapiHeaderDTO yapiHeaderDTO = new YapiHeaderDTO();
+                            yapiHeaderDTO.setName(headerName);
+                            yapiHeaderDTO.setValue(headerValue);
+                            if (Objects.isNull(yapiSaveParam.getReq_headers())) {
+                                List list = new ArrayList();
+                                list.add(yapiHeaderDTO);
+                                yapiSaveParam.setReq_headers(list);
+                            } else {
+                                yapiSaveParam.getReq_headers().add(yapiHeaderDTO);
+                            }
+                        }
+
                         try {
                             // 上传
                             YapiResponse yapiResponse = new UploadYapi().uploadSave(yapiSaveParam, attachUpload, project.getBasePath());
