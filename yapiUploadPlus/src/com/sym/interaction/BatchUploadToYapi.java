@@ -23,6 +23,7 @@ import com.sym.constant.YapiConstant;
 import com.sym.dto.*;
 import com.sym.upload.UploadYapi;
 import com.sym.xml.YApiProjectProperty;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -87,10 +88,7 @@ public class BatchUploadToYapi extends AnAction {
                 projectType = ProjectTypeConstant.dubbo;
 
             }
-            java.util.List<String> tagList = new ArrayList<>();
-            if (null != tag) {
-                tagList = Arrays.asList(tag.split(","));
-            }
+
         } catch (Exception ex) {
             Messages.showErrorDialog("获取配置失败，异常:  " + ex.getMessage(), "获取配置失败！");
             return;
@@ -98,6 +96,10 @@ public class BatchUploadToYapi extends AnAction {
 
         if (!virtualFile.isDirectory()) {
             virtualFile = virtualFile.getParent();
+        }
+        java.util.List<String> tagList = new ArrayList<>();
+        if (null != tag) {
+            tagList = Arrays.asList(tag.split(","));
         }
 
         /*
