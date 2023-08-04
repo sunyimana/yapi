@@ -879,6 +879,19 @@ public class BuildJsonForYapi {
             } else if (NormalTypes.genericList.contains(fieldTypeName)) {
                 if (childType != null) {
                     String child = childType[index].split(">")[0];
+
+                    if (child.endsWith("java.lang.Void")) {
+                        child = child.replace(",java.lang.Void", "");
+                    }
+
+                    if (child.endsWith("java.lang.String")) {
+                        child = child.replace(",java.lang.String", "");
+                    }
+
+                    if (child.endsWith("com.weimob.mp.goods.common.dto.SoaRespCommonErrorDTO")) {
+                        child = child.replace(",com.weimob.mp.goods.common.dto.SoaRespCommonErrorDTO", "");
+                    }
+
                     if ("?".equals(child)) {
                         KV kv1 = new KV();
                         kv.set(name, kv1);
@@ -901,11 +914,6 @@ public class BuildJsonForYapi {
                         //class type
                         KV kv1 = new KV();
                         kv1.set(KV.by("type", "object"));
-
-                        if (child.endsWith("java.lang.Void")) {
-                            child = child.replace(",java.lang.Void", "");
-                        }
-
                         PsiClass psiClassChild = JavaPsiFacade.getInstance(project).findClass(child, GlobalSearchScope.allScope(project));
                         kv1.set(KV.by("description", (Strings.isNullOrEmpty(remark) ? ("" + psiClassChild.getName().trim()) : remark + " ," + psiClassChild.getName().trim())));
                         if (!pNames.contains(psiClassChild.getName())) {
