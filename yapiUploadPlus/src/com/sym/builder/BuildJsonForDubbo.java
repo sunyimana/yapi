@@ -173,7 +173,12 @@ public class BuildJsonForDubbo {
                 } else {
                     PsiClass psiClassChild = JavaPsiFacade.getInstance(project).findClass(psiParameter.getType().getCanonicalText(), GlobalSearchScope.allScope(project));
                     KV kvObject = getFields(psiClassChild, project);
-                    String classNameChild = ((PsiJavaFileImpl) psiClassChild.getContext()).getPackageName() + "." + psiClassChild.getName();
+                    String classNameChild = null;
+                    try {
+                        classNameChild = ((PsiJavaFile) psiClassChild.getContext()).getPackageName() + "." + psiClassChild.getName();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     KV kvClass = KV.create();
                     kvClass.set(classNameChild, kvObject);
                     list.add(kvClass);
@@ -188,8 +193,8 @@ public class BuildJsonForDubbo {
             getRequest(project, yapiDubboDTO, psiMethodTarget);
             String json = gson.toJson(list);
             yapiDubboDTO.setParams(json);
-            String packageName = "/" + ((PsiJavaFileImpl) psiFile).getPackageName() + "." + selectedClass.getName() + "#" + psiMethodTarget.getName();
-            yapiDubboDTO.setDubbo_service(((PsiJavaFileImpl) psiFile).getPackageName() + "." + selectedClass.getName());
+            String packageName = "/" + ((PsiJavaFile) psiFile).getPackageName() + "." + selectedClass.getName() + "#" + psiMethodTarget.getName();
+            yapiDubboDTO.setDubbo_service(((PsiJavaFile) psiFile).getPackageName() + "." + selectedClass.getName());
             yapiDubboDTO.setDubbo_method(psiMethodTarget.getName());
             yapiDubboDTO.setPath(packageName);
             String refernceDesc = psiMethodTarget.getText().replace("<", "&lt;").replace(">", "&gt;");
