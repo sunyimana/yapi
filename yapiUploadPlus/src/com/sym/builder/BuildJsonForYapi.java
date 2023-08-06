@@ -633,7 +633,7 @@ public class BuildJsonForYapi {
             //如果是包装类型
             KV kvClass = KV.create();
             kvClass.set(psiType.getCanonicalText(), NormalTypes.normalTypes.get(psiType.getPresentableText()));
-        } else if (psiType.getPresentableText().startsWith("List")) {
+        } else if (psiType.getPresentableText().startsWith("List<")) {
             String[] types = psiType.getCanonicalText().split("<");
             KV listKv = new KV();
             if (types.length > 1) {
@@ -663,7 +663,7 @@ public class BuildJsonForYapi {
             result.set("description", psiType.getPresentableText());
             result.set("items", listKv);
             return result;
-        } else if (psiType.getPresentableText().startsWith("Set")) {
+        } else if (psiType.getPresentableText().startsWith("Set<")) {
             String[] types = psiType.getCanonicalText().split("<");
             KV listKv = new KV();
             if (types.length > 1) {
@@ -693,7 +693,7 @@ public class BuildJsonForYapi {
             result.set("description", psiType.getPresentableText());
             result.set("items", listKv);
             return result;
-        } else if (psiType.getPresentableText().startsWith("Map") || psiType.getPresentableText().startsWith("HashMap") || psiType.getPresentableText().startsWith("LinkedHashMap")) {
+        } else if (psiType.getPresentableText().startsWith("Map<") || psiType.getPresentableText().startsWith("HashMap<") || psiType.getPresentableText().startsWith("LinkedHashMap<")) {
             KV kv1 = new KV();
             kv1.set(KV.by("type", "object"));
             kv1.set(KV.by("description", "(该参数为map)"));

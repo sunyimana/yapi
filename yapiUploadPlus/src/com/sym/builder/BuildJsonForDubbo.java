@@ -124,7 +124,7 @@ public class BuildJsonForDubbo {
                     KV kvClass = KV.create();
                     kvClass.set(psiParameter.getType().getCanonicalText(), NormalTypes.normalTypes.get(psiParameter.getType().getPresentableText()));
                     list.add(kvClass);
-                } else if (psiParameter.getType().getPresentableText().startsWith("List")) {
+                } else if (psiParameter.getType().getPresentableText().startsWith("List<")) {
                     ArrayList listChild = new ArrayList<>();
                     String[] types = psiParameter.getType().getCanonicalText().split("<");
                     if (types.length > 1) {
@@ -142,7 +142,7 @@ public class BuildJsonForDubbo {
                     KV kvClass = KV.create();
                     kvClass.set(types[0], listChild);
                     list.add(kvClass);
-                } else if (psiParameter.getType().getPresentableText().startsWith("Set")) {
+                } else if (psiParameter.getType().getPresentableText().startsWith("Set<")) {
                     HashSet setChild = new HashSet();
                     String[] types = psiParameter.getType().getCanonicalText().split("<");
                     if (types.length > 1) {
@@ -161,7 +161,7 @@ public class BuildJsonForDubbo {
                     KV kvClass = KV.create();
                     kvClass.set(types[0], setChild);
                     list.add(kvClass);
-                } else if (psiParameter.getType().getPresentableText().startsWith("Map")) {
+                } else if (psiParameter.getType().getPresentableText().startsWith("Map<")) {
                     HashMap hashMapChild = new HashMap();
                     String[] types = psiParameter.getType().getCanonicalText().split("<");
                     if (types.length > 1) {
