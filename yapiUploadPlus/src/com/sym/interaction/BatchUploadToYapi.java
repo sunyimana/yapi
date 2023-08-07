@@ -133,6 +133,8 @@ public class BatchUploadToYapi extends AnAction {
             queue.addAll(currentSubdirectories);
         }
 
+        int successCnt = 0;
+
         if (ProjectTypeConstant.dubbo.equals(projectType)) {
             for (String key : fileMap.keySet()) {
                 // 从key中提取file的名字，得到类名
@@ -168,6 +170,7 @@ public class BatchUploadToYapi extends AnAction {
                             } else {
                                 String url = yapiUrl + "/project/" + projectId + "/interface/api/cat_" + yapiResponse.getCatId();
                                 // this.setClipboard(url);
+                                successCnt++;
                                 // Messages.showInfoMessage("上传成功！接口文档url地址:  " + url,"上传成功！");
                             }
                         } catch (Exception e1) {
@@ -231,7 +234,7 @@ public class BatchUploadToYapi extends AnAction {
                 }
             }
         }
-        Messages.showInfoMessage("批量上传完成！" + project.getName(), "上传成功！");
+        Messages.showInfoMessage(String.format("批量上传完成！上传总数[%s]", successCnt) + project.getName(), "上传成功！");
     }
 
 }
