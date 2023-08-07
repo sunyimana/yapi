@@ -68,9 +68,10 @@ public class BatchUploadToYapi extends AnAction {
         String headerValue = null;
         String projectType = null;
         int statusMode = 0;
-        String status = null;
+        String status = "done";
         String returnClass = null;
         String attachUpload = null;
+        java.util.List<String> tagList = new ArrayList<>();
         // 获取配置
         try {
             YApiProjectProperty property = ProjectConfigReader.read(project);
@@ -97,7 +98,7 @@ public class BatchUploadToYapi extends AnAction {
         if (!virtualFile.isDirectory()) {
             virtualFile = virtualFile.getParent();
         }
-        java.util.List<String> tagList = new ArrayList<>();
+
         if (null != tag) {
             tagList = Arrays.asList(tag.split(","));
         }
@@ -116,18 +117,20 @@ public class BatchUploadToYapi extends AnAction {
         }
         // 查找所有文件
         Map<String, PsiFile> fileMap = new HashMap<>();
-        Queue<PsiFile> queue = new LinkedList<>(Arrays.asList(dir.getFiles()));
+        Queue<PsiDirectory> queue = new LinkedList<>(Collections.singletonList(dir));
 
         while (!queue.isEmpty()) {
-            PsiFile current = queue.poll();
+            PsiDirectory current = queue.poll();
 
-            if (!current.isDirectory() && current.getName().endsWith(".java")) {
-                // 如果不是目录
-                fileMap.put(current.getName(), current);
-            } else {
-                // 如果是目录，就入队
-                queue.add(current);
+            List<PsiFile> currentFiles = Arrays.asList(current.getFiles());
+            if (currentFiles.size() > 0) {
+                for (PsiFile file : currentFiles) {
+                    fileMap.put(file.getName(), file);
+                }
             }
+
+            List<PsiDirectory> currentSubdirectories = Arrays.asList(current.getSubdirectories());
+            queue.addAll(currentSubdirectories);
         }
 
         if (ProjectTypeConstant.dubbo.equals(projectType)) {
@@ -137,7 +140,7 @@ public class BatchUploadToYapi extends AnAction {
                 ArrayList<YapiDubboDTO> yapiDubboDTOs = new BuildJsonForDubbo().actionPerformedList(fileName, fileMap.get(key), project);
                 if (yapiDubboDTOs != null) {
                     for (YapiDubboDTO yapiDubboDTO : yapiDubboDTOs) {
-                        YapiSaveParam yapiSaveParam = new YapiSaveParam(projectToken, yapiDubboDTO.getTitle(), yapiDubboDTO.getPath(), yapiDubboDTO.getParams(), yapiDubboDTO.getResponse(), Integer.valueOf(projectId), yapiUrl, yapiDubboDTO.getDesc());
+                        YapiSaveParam yapiSaveParam = new YapiSaveParam(projectToken, yapiDubboDTO.getTitle(), yapiDubboDTO.getPath(), yapiDubboDTO.getRequestBody(), yapiDubboDTO.getResponse(), Integer.valueOf(projectId), yapiUrl, yapiDubboDTO.getDesc());
 
                         if (StringUtils.isBlank(yapiDubboDTO.getStatus())) {
                             yapiSaveParam.setStatus(status);
@@ -161,7 +164,7 @@ public class BatchUploadToYapi extends AnAction {
                             // 上传
                             YapiResponse yapiResponse = new UploadYapi().uploadSave(yapiSaveParam, null, project.getBasePath());
                             if (yapiResponse.getErrcode() != 0) {
-                                Messages.showErrorDialog("上传失败！异常:  " + yapiResponse.getErrmsg(), "上传失败！");
+                                Messages.showErrorDialog(String.format("接口[%s]上传失败！异常：%s", yapiDubboDTO.getTitle(), yapiResponse.getErrmsg()), "上传失败！");
                             } else {
                                 String url = yapiUrl + "/project/" + projectId + "/interface/api/cat_" + yapiResponse.getCatId();
                                 // this.setClipboard(url);
@@ -181,10 +184,7 @@ public class BatchUploadToYapi extends AnAction {
                 ArrayList<YapiApiDTO> yapiApiDTOS = new BuildJsonForYapi().actionPerformedList(fileName, fileMap.get(key), project, attachUpload, returnClass);
                 if (yapiApiDTOS != null) {
                     for (YapiApiDTO yapiApiDTO : yapiApiDTOS) {
-                        YapiSaveParam yapiSaveParam = new YapiSaveParam(projectToken, yapiApiDTO.getTitle(), yapiApiDTO.getPath(),
-                                yapiApiDTO.getParams(), yapiApiDTO.getRequestBody(), yapiApiDTO.getResponse(), Integer.valueOf(projectId),
-                                yapiUrl, true, yapiApiDTO.getMethod(), yapiApiDTO.getDesc(), yapiApiDTO.getHeader());
-
+                        YapiSaveParam yapiSaveParam = new YapiSaveParam(projectToken, yapiApiDTO.getTitle(), yapiApiDTO.getPath(), yapiApiDTO.getParams(), yapiApiDTO.getRequestBody(), yapiApiDTO.getResponse(), Integer.valueOf(projectId), yapiUrl, true, yapiApiDTO.getMethod(), yapiApiDTO.getDesc(), yapiApiDTO.getHeader());
                         yapiSaveParam.setReq_body_form(yapiApiDTO.getReq_body_form());
                         yapiSaveParam.setReq_body_type(yapiApiDTO.getReq_body_type());
                         yapiSaveParam.setReq_params(yapiApiDTO.getReq_params());

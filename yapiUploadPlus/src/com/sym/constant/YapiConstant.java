@@ -10,46 +10,45 @@ public interface YapiConstant {
     /**
      * 目录
      */
-    String menu="tool-temp";
+    String menu = "tool-temp";
     /**
      * 新增或者更新接口
      */
-    String yapiSave="/api/interface/save";
+    String yapiSave = "/api/interface/save";
     /**
      * 获取接口菜单列表
      */
-    String yapiListMenu="/api/interface/list_menu";
+    String yapiListMenu = "/api/interface/list_menu";
     /**
      * 更新接口
      */
-    String yapiUp="/api/interface/up";
+    String yapiUp = "/api/interface/up";
     /**
      * 获取接口列表数据
      */
-    String yapiList="/api/interface/list";
+    String yapiList = "/api/interface/list";
 
-
-    String yapiListCat ="/api/interface/list_cat";
+    String yapiListCat = "/api/interface/list_cat";
     /**
      * 新增接口
      */
-    String yapiAdd="/api/interface/add";
+    String yapiAdd = "/api/interface/add";
     /**
      * 新增接口分类
-      */
-    String yapiAddCat="/api/interface/add_cat";
+     */
+    String yapiAddCat = "/api/interface/add_cat";
     /**
      * 获取接口数据
      */
-    String yapiGet="/api/interface/get";
+    String yapiGet = "/api/interface/get";
 
     /**
      * 获取菜单列表
      */
-    String yapiCatMenu="/api/interface/getCatMenu";
+    String yapiCatMenu = "/api/interface/getCatMenu";
 
     /**
      * 通过路径获得接口
      */
-    String yapiGetByPath="/api/interface/getbypath";
+    String yapiGetByPath = "/api/interface/getbypath";
 }

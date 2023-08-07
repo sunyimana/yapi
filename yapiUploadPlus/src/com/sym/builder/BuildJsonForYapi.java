@@ -633,7 +633,7 @@ public class BuildJsonForYapi {
             //如果是包装类型
             KV kvClass = KV.create();
             kvClass.set(psiType.getCanonicalText(), NormalTypes.normalTypes.get(psiType.getPresentableText()));
-        } else if (psiType.getPresentableText().startsWith("List")) {
+        } else if (psiType.getPresentableText().startsWith("List<")) {
             String[] types = psiType.getCanonicalText().split("<");
             KV listKv = new KV();
             if (types.length > 1) {
@@ -663,7 +663,7 @@ public class BuildJsonForYapi {
             result.set("description", psiType.getPresentableText());
             result.set("items", listKv);
             return result;
-        } else if (psiType.getPresentableText().startsWith("Set")) {
+        } else if (psiType.getPresentableText().startsWith("Set<")) {
             String[] types = psiType.getCanonicalText().split("<");
             KV listKv = new KV();
             if (types.length > 1) {
@@ -693,7 +693,7 @@ public class BuildJsonForYapi {
             result.set("description", psiType.getPresentableText());
             result.set("items", listKv);
             return result;
-        } else if (psiType.getPresentableText().startsWith("Map") || psiType.getPresentableText().startsWith("HashMap") || psiType.getPresentableText().startsWith("LinkedHashMap")) {
+        } else if (psiType.getPresentableText().startsWith("Map<") || psiType.getPresentableText().startsWith("HashMap<") || psiType.getPresentableText().startsWith("LinkedHashMap<")) {
             KV kv1 = new KV();
             kv1.set(KV.by("type", "object"));
             kv1.set(KV.by("description", "(该参数为map)"));
@@ -879,6 +879,19 @@ public class BuildJsonForYapi {
             } else if (NormalTypes.genericList.contains(fieldTypeName)) {
                 if (childType != null) {
                     String child = childType[index].split(">")[0];
+
+                    if (child.endsWith("java.lang.Void")) {
+                        child = child.replace(",java.lang.Void", "");
+                    }
+
+                    if (child.endsWith("java.lang.String")) {
+                        child = child.replace(",java.lang.String", "");
+                    }
+
+                    if (child.endsWith("com.weimob.mp.goods.common.dto.SoaRespCommonErrorDTO")) {
+                        child = child.replace(",com.weimob.mp.goods.common.dto.SoaRespCommonErrorDTO", "");
+                    }
+
                     if ("?".equals(child)) {
                         KV kv1 = new KV();
                         kv.set(name, kv1);
@@ -901,11 +914,6 @@ public class BuildJsonForYapi {
                         //class type
                         KV kv1 = new KV();
                         kv1.set(KV.by("type", "object"));
-
-                        if (child.endsWith("java.lang.Void")) {
-                            child = child.replace(",java.lang.Void", "");
-                        }
-
                         PsiClass psiClassChild = JavaPsiFacade.getInstance(project).findClass(child, GlobalSearchScope.allScope(project));
                         kv1.set(KV.by("description", (Strings.isNullOrEmpty(remark) ? ("" + psiClassChild.getName().trim()) : remark + " ," + psiClassChild.getName().trim())));
                         if (!pNames.contains(psiClassChild.getName())) {
